@@ -1,0 +1,131 @@
+﻿@model Online_FIR.Models.FIR
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<table>
+    <tr>
+         <td>@Html.DisplayNameFor(model => model.FId)</td>
+    <td>
+        @Html.DisplayFor(model => model.FId)</td>
+        </tr>
+    
+    <tr>
+      <td>   @Html.DisplayNameFor(model => model.Name)</td>
+        <td>@Html.DisplayFor(model => model.Name)</td>
+            </tr>
+
+    <tr>
+        <td> @Html.DisplayNameFor(model => model.Father_Name)</td>
+    <td>
+        @Html.DisplayFor(model => model.Father_Name)
+    </td>
+        </tr>
+
+    <tr>
+        <td>
+             @Html.DisplayNameFor(model => model.CNIC)
+        </td>
+    <td>
+        @Html.DisplayFor(model => model.CNIC)
+    </td>
+        </tr>
+
+    <tr>
+         <td>@Html.DisplayNameFor(model => model.Email)</td>
+    
+    <td >
+        @Html.DisplayFor(model => model.Email)
+    </td>
+        </tr>
+
+    <tr>
+         <td>@Html.DisplayNameFor(model => model.CITY)</td>
+    
+    <td >
+        @Html.DisplayFor(model => model.CITY)
+    </td>
+        </tr>
+    <tr>
+         <td>@Html.DisplayNameFor(model => model.Address)</td>
+        <td>@Html.DisplayFor(model => model.Address)</td>
+        </tr>
+    <tr>
+         <td>@Html.DisplayNameFor(model => model.Area)</td>
+         <td>@Html.DisplayFor(model => model.Area)</td>
+        </tr>
+    <tr>
+         <td>@Html.DisplayNameFor(model => model.Phone_No)</td>
+    
+    <td >
+        @Html.DisplayFor(model => model.Phone_No)
+    </td>
+        </tr>
+
+    <tr>
+         <td>@Html.DisplayNameFor(model => model.Mobile_No)</td>
+    
+    <td >
+        @Html.DisplayFor(model => model.Mobile_No)
+    <td>
+        </tr>
+    <tr >
+         <td>@Html.DisplayNameFor(model => model.Type)</td>
+    
+    <td >
+        @Html.DisplayFor(model => model.Type)
+    </td>
+        </tr>
+    <tr >
+         <td>@Html.DisplayNameFor(model => model.Description)</td>
+    
+    <td >
+        @Html.DisplayFor(model => model.Description)
+    </td>
+        </tr>
+    <tr>
+         <td>@Html.DisplayNameFor(model => model.Date_of_Incident)</td>
+    
+    <td >
+        @Html.DisplayFor(model => model.Date_of_Incident)
+    </td>
+        </tr>
+    <tr >
+         <td>@Html.DisplayNameFor(model => model.Date_of_Complaint)</td>
+   
+    <td >
+        @Html.DisplayFor(model => model.Date_of_Complaint)
+    </td>
+         </tr>
+    <tr>
+         <td>@Html.DisplayNameFor(model => model.Time_of_Inceident)</td>
+    
+    <td >
+        @Html.DisplayFor(model => model.Time_of_Inceident)
+    </td>
+        </tr>
+    <tr>
+         <td>@Html.DisplayNameFor(model => model.Area_of_Incident)</td>
+    
+    <td >
+        @Html.DisplayFor(model => model.Area_of_Incident)
+    </td>
+        </tr>
+    <tr>
+        <td> @Html.DisplayNameFor(model => model.Nominies)</td>
+    
+    <td >
+        @Html.DisplayFor(model => model.Nominies)
+    </td>
+    </tr>
+                </table>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

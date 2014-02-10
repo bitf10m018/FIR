@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "affectedArea";
+}
+@model List<Online_FIR.Models.FIR>
+
+<h2>Most Affected Areas</h2>
+
+<style>
+    table {
+        text-align:left;
+    }
+   tr,td {
+       border:solid;
+        text-align:left;
+        padding-left:10px;
+        padding-right:10px;
+    }
+</style>
+
+<table>
+    <tr>
+        <th>
+            CITY
+        </th>
+        
+        <th>
+            Date
+        </th>
+        <th>
+            Area 
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.CITY)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_of_Incident)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area_of_Incident)
+        </td>
+        
+        
+    </tr>
+}
+
+</table>
+

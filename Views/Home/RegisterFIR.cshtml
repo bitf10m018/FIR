@@ -1,0 +1,222 @@
+﻿@model Online_FIR.Models.FIR
+
+@{
+    ViewBag.Title = "Register FIR";
+}
+
+
+@using (Html.BeginForm(new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+   
+        <h2 style="text-align:center">Register a FIR</h2>
+<style>
+table
+{
+
+}
+th
+{
+
+}
+
+</style>
+     <p style="text-align:center">Please Fill the form with correct Information</p>
+    <p style="text-align:center"><strong style="color:red">*</strong> Feilds are Mandatory</p>
+        <table>
+            <th style="text-align:center">User Information</th>       
+
+            <tr>
+            <td><strong style="color:red">*</strong> Name </td>
+            <td>@Html.EditorFor(model => model.Name)</td>
+            <td style="color:red">@Html.ValidationMessageFor(model => model.Name)</td>
+        </tr>
+            
+            
+        <tr>
+           <td> @Html.LabelFor(model => model.Father_Name)</td>
+        
+        <td>
+            @Html.EditorFor(model => model.Father_Name)</td>
+            @Html.ValidationMessageFor(model => model.Father_Name)
+        </tr>
+            
+            <tr>
+        <td><strong style="color:red">*</strong>
+             CNIC
+        </td>
+        <td>
+            @Html.EditorFor(model => model.CNIC) e.g (35200-7625782-9)</td>
+            <td style="color:red">@Html.ValidationMessageFor(model => model.CNIC)</td>
+       </tr>
+  
+            <tr >
+            <td>@Html.LabelFor(model => model.Email)
+        <td>
+            @Html.EditorFor(model => model.Email) e.g (map@hotmail.com)</td>
+            @Html.ValidationMessageFor(model => model.Email)
+         </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.CITY)</td>
+        <td>
+            @Html.EditorFor(model => model.CITY) </td>
+            @Html.ValidationMessageFor(model => model.CITY)
+            </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.Address)</td>
+        
+        <td>
+            <textarea style="height:50px;" name="Address"></textarea></td>
+            @Html.ValidationMessageFor(model => model.Address)
+         </tr>
+     
+               <tr>
+                   <td>
+            @Html.LabelFor(model => model.Area)</td>
+        
+        <td >
+            <select id="uarea" name="Area">
+                <option value="">Please Select Area</option>
+                <option value="Wapda Town">Wapda Town</option>
+                <option value="Model Town">Model Town</option>
+                <option value="Garden Town">Garden Town</option>
+                <option value="Muslim Town">Muslim Town</option>
+                <option value="Iqbal Town">Iqbal Town</option>
+                <option value="Anarkali">Anarkali</option>
+                <option value="others">Others</option>
+            </select>
+            </td>
+             
+            @Html.ValidationMessageFor(model => model.Area)
+        
+           </tr>
+        <tr>
+            <td>
+            @Html.LabelFor(model => model.Phone_No)</td>
+        
+        <td >
+            @Html.EditorFor(model => model.Phone_No)</td>
+            @Html.ValidationMessageFor(model => model.Phone_No)
+        
+            </tr>
+        <tr>
+            <td>
+            <strong style="color:red">*</strong> Mobile No.</td>
+        
+        <td >
+            @Html.EditorFor(model => model.Mobile_No) e.g (0320-1234567)</td>
+            <td style="color:red">@Html.ValidationMessageFor(model => model.Mobile_No)</td>
+        
+            </tr>
+        <th style="text-align:right">FIR Information</th>       
+        <tr>
+            <td>
+            @Html.LabelFor(model => model.Type)</td>
+        
+        <td >
+            <select id="areaof" name="Type">
+                <option value="">Please Select Type</option>
+                <option value="Mobile Snatching">Mobile Snatching</option>
+                <option value="Car Theft">Car Theft</option>
+                <option value="Murder">Murder</option>
+                <option value="Kidnapping">Kidnapping</option>
+                <option value="Life Threat">Life Threat</option>
+                <option value="Missing Person">Missing Person</option>
+                <option value="Robbery">Robbery</option>
+                <option value="Drugs">Drugs</option>
+                <option value="others">Others</option>
+            </select></td>
+            @Html.ValidationMessageFor(model => model.Type)
+        
+            </tr>
+        
+        <tr>
+            <td>
+            @Html.LabelFor(model => model.Description)</td>
+        
+        <td >
+            <textarea name="Description"></textarea></td>
+            @Html.ValidationMessageFor(model => model.Description)
+        
+            </tr>
+        
+
+        <tr>
+            <td>
+            <strong style="color:red">*</strong> Date of Incident</td>
+        
+        <td >
+            <input type="date" name="Date_of_Incident"/></td>
+            <td style="color:red">@Html.ValidationMessageFor(model => model.Date_of_Incident)</td>        
+            </tr>
+        
+        <tr>
+            <td>
+            @Html.LabelFor(model => model.Date_of_Complaint)</td>
+        
+        <td >
+            <input style="color:red; " type="text" value="@DateTime.Now" name="Date_of_Complaint"/>  </td>
+            <td>@Html.ValidationMessageFor(model => model.Date_of_Complaint)</td>
+        
+            </tr>
+        
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.Time_of_Inceident)
+            </td>
+        
+        <td >
+            <input id="time" type ="time" name="Time_of_Inceident"></td>
+            @Html.ValidationMessageFor(model => model.Time_of_Inceident)
+        
+            </tr>
+        
+        <tr>
+            <td>
+            @Html.LabelFor(model => model.Area_of_Incident)</td>
+        
+        <td >
+            <select id="area" name="Area_of_Incident">
+                <option value="">Please Select Area of Incident</option>
+                <option value="Wapda Town">Wapda Town</option>
+                <option value="Model Town">Model Town</option>
+                <option value="Garden Town">Garden Town</option>
+                <option value="Muslim Town">Muslim Town</option>
+                <option value="Iqbal Town">Iqbal Town</option>
+                <option value="Anarkali">Anarkali</option>
+                <option value="others">Others</option>
+            </select></td>
+            @Html.ValidationMessageFor(model => model.Area_of_Incident)
+        
+            </tr>
+        
+       <tr>
+            <td>
+            @Html.LabelFor(model => model.Nominies)</td>
+        
+        <td >
+            @Html.EditorFor(model => model.Nominies)</td>
+            <td>@Html.ValidationMessageFor(model => model.Nominies)</td>
+        
+            </tr>
+            <tr><td> Upload Image: </td><td ><input style="width:300px;height:40px" type="file" name="image" /></td></tr>
+        <tr>
+        <td>    <input type="submit" value="Register FIR" /></td>
+        </tr>
+        
+        </table>
+        
+}
+
+<div>
+    @Html.ActionLink("Back to Home Page", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+    
+</script>

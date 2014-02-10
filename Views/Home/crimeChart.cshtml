@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "crimeChart";
+}
+@model List<Online_FIR.Models.FIR>
+
+<h2>Crime Chart</h2>
+ <style>
+    table {
+        text-align:left;
+    }
+   tr,td {
+       border:solid;
+        text-align:left;
+        padding-left:10px;
+        padding-right:10px;
+    }
+</style>
+<table>
+    <tr>
+        
+        <th>
+            Crime Type
+        </th>
+       
+        <th>
+            City
+        </th>
+        
+        <th>
+            Area 
+        </th>
+        <th>
+            Nominies
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CITY)
+        </td>
+           
+        <td>
+            @Html.DisplayFor(modelItem => item.Area_of_Incident)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nominies)
+        </td>
+    </tr>
+}
+</table>
+
+
+<table>
+    <th>Counts </th><th>Total</th>
+    <tr>
+        <td>Mobile Snatching </td>
+        <td>@ViewBag.mob </td>
+    </tr>
+    <tr> <td>Murders</td><td>@ViewBag.mur</td></tr>
+    <tr> <td>Car Stolen</td><td>@ViewBag.car</td></tr>
+
+    <tr> <td>Kidnapping</td><td>@ViewBag.kid</td></tr>
+
+    <tr> <td>Missing Persons</td> <td>@ViewBag.mis</td></tr>
+    <tr> <td>Life Threats</td> <td>@ViewBag.life</td></tr>
+    <tr> <td>Drugs</td> <td>@ViewBag.drug</td></tr>
+    <tr> <td>Robbery</td> <td>@ViewBag.rob</td></tr>
+    <tr> <td>Life Threats</td> <td>@ViewBag.life</td></tr>
+    <tr> <td>Others</td> <td>@ViewBag.others</td></tr>
+</table>

@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<!--[if IE 7 ]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+ <style>
+     #main ul li {
+	list-style-image: url(../Images/bullet.gif);
+}
+</style>        
+
+    <title>@ViewBag.title</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Content/screen.css" />
+
+</head>
+
+
+<body  style="background: #CCC url(../Images/bg.gif) repeat-x;">
+
+<!-- wrap starts here -->
+<div id="wrap" style="background: #CCC url(/Images/wrap.gif) repeat-y;">
+
+	<!--header -->
+	<div id="header" style="background: #8AB84B url(/Images/header.jpg) no-repeat;">			
+				
+		<h1 id="logo-text"><a href="#" title="">Online FIR System</a></h1>		
+		<p id="slogan">A System for EveryOne...</p>	
+		
+		<div id="top-menu" style="background: #74A838 url(../Images/top-menu.gif) repeat-x;">
+		<section id="login">
+        @Html.Partial("_LoginPartial")
+        </section>
+		</div>			
+		
+	<!--header ends-->					
+	</div>
+		
+	<!-- navigation starts-->	
+
+	<div  id="nav" style="background-image: url(../Images/nav.gif)" >
+       
+
+		<ul>
+			<li id="current" style="background: transparent url(../Images/right-tab.gif) no-repeat right top;">@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            <li>@Html.ActionLink("File A FIR", "RegisterFIR", "Home")</li>
+            <li>@Html.ActionLink("Crime Chart", "crimeChart", "Home")</li> 
+            <li>@Html.ActionLink("Most Affected Areas", "areas", "Home")
+		</ul>
+
+	<!-- navigation ends-->	
+	</div>					
+			
+	<!-- content starts -->
+	<div id="content">
+        <div id="main">
+	    @RenderSection("featured", required: false)
+            <h3>Search</h3>	
+			
+			 <form action="~/Home/GetSearch" method="post" id="searchform " style="width:278px">
+			<p>
+			<label for="qsearch">Search:</label>
+			
+			<!--<input class="btn" alt="Search" type="image" name="searchsubmit" title="Search" src="images/search.gif" />-->
+
+             <input class="tbox" type="text" name = "searchbar" id="searchfeild" value=""  onfocus="this.value=(this.value=='Search Our Website&hellip;')? '' : this.value ;" />
+             <input type="submit" name="submit" id="go" value="Search"  />
+
+			</p>
+			</form>			
+        @RenderBody()		
+        
+        <!-- main ends -->	
+            	
+		</div>
+				
+		
+		
+	<!-- content ends-->	
+	</div>
+		
+	<!-- footer starts -->		
+	<div id="footer" style="background: #CCC url(../Images/footer-bottom.gif) no-repeat left top;">
+				@Scripts.Render("~/bundles/jquery")
+                @RenderSection("scripts", required: false)
+		
+			<p>
+			&copy; All your copyright info here  
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+			Design by <a href="#">BITF10M018</a>
+
+   		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			
+		<a>@Html.ActionLink("Home", "Index", "Home")</a>|
+            <a>@Html.ActionLink("About", "About", "Home")</a>|
+            <a>@Html.ActionLink("Contact", "Contact", "Home")</a>
+   		</p>			
+	
+	<!-- footer ends-->
+	</div>
+
+<!-- wrap ends here -->
+</div>
+
+</body>
+</html>

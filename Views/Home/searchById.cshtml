@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "searchById";
+}
+@model Online_FIR.Models.FIR
+
+<h2>Your Requested FIR</h2>
+
+<form action="~/Views/Home/searchById">
+    <input type="number" name="search" />
+    <input type="submit" />
+</form>
+
+   
+<p>@Html.DisplayFor(model=>model.Name);</p>
